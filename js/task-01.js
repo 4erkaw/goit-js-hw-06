@@ -1,12 +1,12 @@
-const categoriesListRef = document.querySelector("#categories");
-const categoriesItemsRef = categoriesListRef.querySelectorAll(".item");
+const refs = {
+    categories: document.querySelector("#categories"),
+    items: document.querySelectorAll(".item"),
+}
 
-const categoriesCount = categoriesItemsRef.length;
+const categoriesCount = refs.items.length;
 console.log(`Number of categories: ${categoriesCount}`);
 
-
-const names = categoriesListRef.querySelectorAll("h2");
-function nameAnimal(names) {
-    const animal = names.forEach(name)
-}
-console.log(nameAnimal(names))
+const categoriesNames = [...refs.items].map(item => {
+    console.log(`Categorie: `,item.firstElementChild.textContent)
+    console.log(`Elements: `, item.lastElementChild.children.length)
+});
