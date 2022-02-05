@@ -1,14 +1,18 @@
 const refs = {
   input: document.querySelector("#validation-input"),
 };
+const inputClasses = refs.input.classList
 
 const validator = () => {
   if (refs.input.value.length === Number(refs.input.dataset.length)) {
-    refs.input.classList.add("valid");
-    refs.input.classList.remove("invalid");
+  classesMaintance('valid','invalid')
   } else {
-    refs.input.classList.add("invalid");
-    refs.input.classList.remove("valid");
+    classesMaintance('invalid','valid')
   }
 };
+
+const classesMaintance = (classToAdd,classToRemove) => {
+  inputClasses.add(classToAdd);
+  inputClasses.remove(classToRemove);
+}
 refs.input.addEventListener("blur", validator);
