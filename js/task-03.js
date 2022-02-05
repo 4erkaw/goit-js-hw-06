@@ -20,5 +20,6 @@ const listItems = images
       `<li><img src = ${image.url} alt = ${image.alt} height = 300/></li>`
   )
   .join("");
+  console.log(listItems)
 
 listRef.insertAdjacentHTML("afterbegin", listItems);
